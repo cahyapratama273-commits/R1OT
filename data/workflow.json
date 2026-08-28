@@ -1,0 +1,37 @@
+[
+  {
+    "step": "01",
+    "title": "Analisis Kebutuhan & Desain Tema",
+    "category": "// STAGE_PLANNING",
+    "description": "Menentukan struktur halaman, palet warna Dark Navy (#0F172A) & Aksen Oranye (#FF6B00), serta menyusun komponen UI berstandar modern.",
+    "icon": "Layout"
+  },
+  {
+    "step": "02",
+    "title": "Setup Framework & Struktur Data",
+    "category": "// STAGE_ARCHITECTURE",
+    "description": "Mengkonfigurasi Next.js 16 (App Router), React 19, dan Tailwind CSS v4 serta membuat skema data JSON statis di folder root data/.",
+    "icon": "Code"
+  },
+  {
+    "step": "03",
+    "title": "Pengembangan Komponen Reusable",
+    "category": "// STAGE_DEVELOPMENT",
+    "description": "Membangun komponen kartu profil (ProfileCard), sistem navigasi (Nav), serta layout responsif menggunakan pendekatan glassmorphism.",
+    "icon": "Cpu"
+  },
+  {
+    "step": "04",
+    "title": "Integrasi Data Telemetri & API",
+    "category": "// STAGE_INTEGRATION",
+    "description": "Menghubungkan dashboard website dengan infrastruktur Antares IoT melalui protokol OneM2M & HTTP REST API.",
+    "icon": "Server"
+  },
+  {
+    "step": "05",
+    "title": "Testing, Deployment & Monitoring",
+    "category": "// STAGE_LAUNCH",
+    "description": "Pengujian responsivitas UI, verifikasi performa beban data real-time, dan deployment aplikasi ke lingkungan produksi.",
+    "icon": "Rocket"
+  }
+]
