@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "HiraKana",
+    "url": "https://hira-kana-app.vercel.app/",
+    "description": "Sebuah ebsite utuk belajar huruf Hiragana dan Katakana dengan fitur kuis interaktif.",
+    "tags": ["Next.js", "Tailwind", "React", "TypeScript"],
+    "member": ["Cahya Permana"]
+  },
+  {
+    "id": 2,
+    "title": "MenJamu",
+    "url": "https://men-jamu.netlify.app/",
+    "description": "A modern blog application with CMS integration and dark mode.",
+    "tags": ["React", "Next.js", "Tailwind", "MDX"],
+    "member": ["Alpian", "Aprizal", "Febri"]
+  },
+  {
+    "id": 3,
+    "title": "Portfolio Website",
+    "url": "https://bio-nexdy-info.netlify.app",
+    "description": "A responsive and interactive personal portfolio template.",
+    "tags": ["Next.js", "Framer Motion", "Tailwind"],
+    "member": "Bob Brown"
+  },
+  {
+    "id": 4,
+    "title": "Task Management App",
+    "url": "https://nyerocos-id.netlify.app",
+    "description": "A Kanban-style task management tool for agile teams.",
+    "tags": ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
+    "member": ["Charlie Davis", "Eve White"]
+  },
+  {
+    "id": 5,
+    "title": "Task Management App",
+    "url": "https://taptap-nxyz.vercel.app",
+    "description": "A Kanban-style task management tool for agile teams.",
+    "tags": ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
+    "member": ["Charlie Davis", "Eve White"]
+  },
+  {
+    "id": 6,
+    "title": "Task Management App",
+    "url": "https://web.whatsapp.com/",
+    "description": "A Kanban-style task management tool for agile teams.",
+    "tags": ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
+    "member": ["Charlie Davis", "Eve White"]
+  },
+  {
+    "id": 7,
+    "title": "Task Management App",
+    "url": "https://trackjepret.netlify.app",
+    "description": "A Kanban-style task management tool for agile teams.",
+    "tags": ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
+    "member": ["Charlie Davis", "Eve White"]
+  }
+]

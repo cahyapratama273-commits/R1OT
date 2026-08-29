@@ -3,8 +3,6 @@ import teamData from "../../../data/team.json";
 import workflowData from "../../../data/workflow.json";
 import { Layout, Code, Cpu, Server, Rocket, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 
-// apa yang harus aku lakukan T_T
-
 // Icon mapping helper for workflow items
 const iconMap = {
   Layout: Layout,

@@ -1,17 +1,17 @@
 [
   {
     "step": "01",
-    "title": "Analisis Kebutuhan & Desain Tema",
+    "title": "Menentukan website apa yang akan dibuat",
     "category": "// STAGE_PLANNING",
-    "description": "Menentukan struktur halaman, palet warna Dark Navy (#0F172A) & Aksen Oranye (#FF6B00), serta menyusun komponen UI berstandar modern.",
-    "icon": "Layout"
+    "description": "Tentukan dahulu Website apa yang akan dibuat dan tujuannya",
+    "icon": "Code"
   },
   {
     "step": "02",
-    "title": "Setup Framework & Struktur Data",
-    "category": "// STAGE_ARCHITECTURE",
-    "description": "Mengkonfigurasi Next.js 16 (App Router), React 19, dan Tailwind CSS v4 serta membuat skema data JSON statis di folder root data/.",
-    "icon": "Code"
+    "title": "Analisis Kebutuhan & Desain Tema",
+    "category": "// STAGE_DESIGN",
+    "description": "Menentukan struktur halaman, palet warna Dark Navy (#0F172A) & Aksen Oranye (#FF6B00), serta menyusun komponen UI berstandar modern.",
+    "icon": "Layout"
   },
   {
     "step": "03",
