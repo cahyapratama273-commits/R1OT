@@ -2,22 +2,26 @@
   {
     "id": 1,
     "name": "Aditya Anugerah",
-    "role": "Lead Developer",
-    "bio": "Memimpin arsitektur teknis tim, mengoordinasikan alur kerja pengembangan, dan memastikan integrasi seluruh modul sistem berjalan lancar.",
+    "role": "UI/UX Designer",
+    "bio": "Menciptakan antarmuka yang intuitif dan visualisasi data yang informatif untuk mempermudah monitoring IoT.",
     "image": "/img/fotoAdit.jpeg",
-    "github": "https://github.com",
+    "github": "https://github.com/AdityaAnugrah19",
+    "instagram": "https://instagram.com/ditnzyyvv",
+    "x": "https://x.com/",
     "linkedin": "https://linkedin.com",
-    "email": "mailto:andhika@example.com"
+    "email": "adityaanugrah6767@gmail.com"
   },
   {
     "id": 2,
     "name": "Ramdhani",
     "role": "Full Stack Developer",
     "bio": "Ahli dalam manajemen database dan pengembangan RESTful API yang melayani ribuan data payload setiap hari.",
-    "image": "https://images.unsplash.com/photo-1683737082798-707cd6eb7c59?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgyfHxwcm9ncmFtbWVyfGVufDB8fDB8fHww",
-    "github": "https://github.com",
-    "linkedin": "https://linkedin.com",
-    "email": "mailto:siti@example.com"
+    "image": "/img/Ramdhani.jpeg",
+    "github": "https://github.com/Dhann8",
+    "instagram": "https://instagram.com/dhaannn2",
+    "x": "https://x.com/Dhann2688",
+    "linkedin": "https://linkedin.com/in/ramdhani-undefined",
+    "email": "mailto:imdhan26@gmail.com"
   },
   {
     "id": 3,
@@ -25,38 +29,47 @@
     "role": "UI/UX Designer ",
     "bio": "Menciptakan antarmuka yang intuitif dan visualisasi data yang informatif untuk mempermudah monitoring IoT.",
     "image": "/img/fotoRidwan.jpeg",
-    "github": "https://github.com",
-    "linkedin": "https://linkedin.com",
-    "email": "mailto:rizky@example.com"
+    "github": "https://github.com/ridwansaepuloh/",
+    "instagram": "https://instagram.com/readwann.jpg",
+    "x": "https://x.com/diarylylian",
+    "linkedin": "https://linkedin.com/in/ridwan-saepuloh-2b0799345",
+    "email": "mailto:ridwansaepuloh2008@gmail.com"
   },
   {
+
     "id": 4,
     "name": "Febri Pratama",
     "role": "Full Stack Developer",
     "bio": "Menangani pengembangan sisi server dan klien sekaligus, menghubungkan API backend dengan antarmuka pengguna secara end-to-end.",
     "image": "/img/fotoFebri.jpeg",
-    "github": "https://github.com",
+    "github": "https://github.com/NexdyMC",
+    "instagram": "https://instagram.com/febriipratama",
+    "x": "https://x.com/NexdyExperiment",
     "linkedin": "https://linkedin.com",
-    "email": "mailto:bagus@example.com"
+    "email": "febripratama1786@gmail.com"
   },
   {
     "id": 5, 
     "name": "Fahri Nasrulloh",
-    "role": "UI/UX Designer ",
+    "role": "UI/UX Designer",
     "bio": "Merancang wireframe dan prototipe desain yang berfokus pada pengalaman pengguna serta konsistensi visual antarmuka.",
     "image": "/img/fFahri.jpeg",
-    "github": "https://github.com",
+    "github": "https://github.com/Lorembidy",
+    "instagram": "https://instagram.com/bang.fahri25",
+    "x": "https://x.com/trump",
     "linkedin": "https://linkedin.com",
-    "email": "mailto:dewi@example.com"
+    "email": "fahri08890@gmail.com"
   },
   {
     "id": 6,
     "name": "Cahya Permana",
     "role": "Front End Developer",
     "bio": "Membangun tampilan antarmuka yang responsif dan interaktif menggunakan React/Next.js dengan performa rendering yang optimal.",
-    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
-    "github": "https://github.com",
+    "image": "/img/Cahya.jpeg",
+    "github": "https://github.com/cahyapratama273-commits",
+    "instagram": "https://instagram.com/@c4itsme",
+    "x": "https://x.com/Prinze_Eugen",
     "linkedin": "https://linkedin.com",
-    "email": "mailto:fajar@example.com"
+    "email": "mailto:ryusuisenpai@gmail.com"
   }
 ]

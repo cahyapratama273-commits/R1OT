@@ -62,6 +62,8 @@ export default function ProjectCard({ project, index = 0 }) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
+      data-aos="fade-up"
+      data-aos-delay={(index % 3) * 150}
       className="flex flex-col bg-[#0F172A] border border-gray-800 rounded-lg shadow-md hover:shadow-xl hover:shadow-[#ff6a1a]/10 hover:scale-105 transition-all duration-300 overflow-hidden group"
     >
       {/* Image Container with 16:9 Aspect Ratio */}

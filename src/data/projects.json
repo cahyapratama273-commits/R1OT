@@ -3,7 +3,7 @@
     "id": 1,
     "title": "HiraKana",
     "url": "https://hira-kana-app.vercel.app/",
-    "description": "Sebuah ebsite utuk belajar huruf Hiragana dan Katakana dengan fitur kuis interaktif.",
+    "description": "Sebuah website untuk belajar huruf Hiragana dan Katakana dengan fitur kuis interaktif.",
     "tags": ["Next.js", "Tailwind", "React", "TypeScript"],
     "member": ["Cahya Permana"]
   },
@@ -11,48 +11,73 @@
     "id": 2,
     "title": "MenJamu",
     "url": "https://men-jamu.netlify.app/",
-    "description": "A modern blog application with CMS integration and dark mode.",
-    "tags": ["React", "Next.js", "Tailwind", "MDX"],
+    "description": "Aplikasi blog modern dengan integrasi CMS, analisis data, dan dukungan dark mode.",
+    "tags": ["JQuery", "Html", "Tailwind"],
     "member": ["Alpian", "Aprizal", "Febri"]
   },
   {
     "id": 3,
     "title": "Portfolio Website",
     "url": "https://bio-nexdy-info.netlify.app",
-    "description": "A responsive and interactive personal portfolio template.",
-    "tags": ["Next.js", "Framer Motion", "Tailwind"],
-    "member": "Bob Brown"
+    "description": "Template portofolio pribadi yang interaktif, responsif, dan kaya akan animasi.",
+    "tags": ["HTML", "JQuery", "Tailwind"],
+    "member": ["Febri Pratama"]
   },
   {
     "id": 4,
-    "title": "Task Management App",
+    "title": "Nyerocos ID Task Management",
     "url": "https://nyerocos-id.netlify.app",
-    "description": "A Kanban-style task management tool for agile teams.",
-    "tags": ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
-    "member": ["Charlie Davis", "Eve White"]
+    "description": "Membuat Topik secara acak untuk membantu siswa belajar Public Speaking",
+    "tags": ["Html","JQuery","Tailwind"],
+    "member": ["Aditya Anugerah"]
   },
   {
     "id": 5,
-    "title": "Task Management App",
+    "title": "TapTap NXYZ",
     "url": "https://taptap-nxyz.vercel.app",
-    "description": "A Kanban-style task management tool for agile teams.",
-    "tags": ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
-    "member": ["Charlie Davis", "Eve White"]
+    "description": "Platform aplikasi web interaktif dengan alur kerja cepat & integrasi API.",
+    "tags": ["Next.js", "React", "Tailwind"],
+    "member": ["Febri Pratama", "Fahri Nasrulloh"]
   },
+  
   {
     "id": 6,
-    "title": "Task Management App",
-    "url": "https://web.whatsapp.com/",
-    "description": "A Kanban-style task management tool for agile teams.",
-    "tags": ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
-    "member": ["Charlie Davis", "Eve White"]
+    "title": "TrackJepret",
+    "url": "https://trackjepret.netlify.app",
+    "description": "Aplikasi pelacakan fotografi dan manajemen galeri interaktif.",
+    "tags": ["Python", "MediaPipe", "Tailwind","TouchDesigner"],
+    "member": ["Aditya Anugerah"]
   },
   {
     "id": 7,
-    "title": "Task Management App",
-    "url": "https://trackjepret.netlify.app",
-    "description": "A Kanban-style task management tool for agile teams.",
-    "tags": ["Next.js", "Prisma", "PostgreSQL", "Tailwind"],
-    "member": ["Charlie Davis", "Eve White"]
+    "title": "MyArchiveList",
+    "url": "https://my-archive-list.vercel.app",
+    "description": "Aplikasi list film,movie dan anime ",
+    "tags": ["Next.js", "Tailwind","TypeScript", "Prisma", "PostgreSQL"],
+    "member": ["Cahya Permana"]
+  },
+  {
+    "id": 8,
+    "title": "BioHub",
+    "url": "https://biohub.up.railway.app/",
+    "description": "Aplikasi edukasi seputar flora dan fauna",
+    "tags": ["Laravel", "Tailwind", "Mysql", "JavaScript"],
+    "member": ["Ramdhani"]
+  },
+  {
+    "id": 9,
+    "title": "RockPaperScissors",
+    "url": "https://rockpaperscissors-nxy.vercel.app",
+    "description": "Aplikasi game suit batu gunting kertas secara tidak terbatas",
+    "tags": ["Html","JQuery","Tailwind"],
+    "member": ["Febri Pratama"]
+  },
+  {
+    "id": 10,
+    "title": "CekServerMC",
+    "url": "https://cekservermc-nxy.vercel.app",
+    "description": "Aplikasi cek server minecraft ",
+    "tags": ["Html","JQuery","Tailwind"],
+    "member": ["Febri Pratama"]
   }
-]
+] 

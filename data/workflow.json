@@ -2,35 +2,35 @@
   {
     "step": "01",
     "title": "Menentukan website apa yang akan dibuat",
-    "category": "// STAGE_PLANNING",
+    "category": "STAGE_PLANNING",
     "description": "Tentukan dahulu Website apa yang akan dibuat dan tujuannya",
     "icon": "Code"
   },
   {
     "step": "02",
     "title": "Analisis Kebutuhan & Desain Tema",
-    "category": "// STAGE_DESIGN",
+    "category": "STAGE_DESIGN",
     "description": "Menentukan struktur halaman, palet warna Dark Navy (#0F172A) & Aksen Oranye (#FF6B00), serta menyusun komponen UI berstandar modern.",
     "icon": "Layout"
   },
   {
     "step": "03",
     "title": "Pengembangan Komponen Reusable",
-    "category": "// STAGE_DEVELOPMENT",
+    "category": "STAGE_DEVELOPMENT",
     "description": "Membangun komponen kartu profil (ProfileCard), sistem navigasi (Nav), serta layout responsif menggunakan pendekatan glassmorphism.",
     "icon": "Cpu"
   },
   {
     "step": "04",
     "title": "Integrasi Data Telemetri & API",
-    "category": "// STAGE_INTEGRATION",
+    "category": "STAGE_INTEGRATION",
     "description": "Menghubungkan dashboard website dengan infrastruktur Antares IoT melalui protokol OneM2M & HTTP REST API.",
     "icon": "Server"
   },
   {
     "step": "05",
     "title": "Testing, Deployment & Monitoring",
-    "category": "// STAGE_LAUNCH",
+    "category": "STAGE_LAUNCH",
     "description": "Pengujian responsivitas UI, verifikasi performa beban data real-time, dan deployment aplikasi ke lingkungan produksi.",
     "icon": "Rocket"
   }
