@@ -4,10 +4,14 @@ import React, { useState, useRef, useMemo, useCallback, useEffect } from 'react'
 import { useTheme } from '@/context/ThemeContext';
 import ProfileCard from '@/components/Card/Profile';
 import ProjectGrid from '@/components/ProjectGrid';
+import HeroAnime from '@/components/HeroAnime';
+import SectionTitle from '@/components/SectionTitle';
+import Counter from '@/components/Counter';
 import teamData from '../../data/team.json';
 import workflowData from '../../data/workflow.json';
 import rawProjectsData from '@/data/projects.json';
 import Typewriter from '@/components/Typewriter';
+import { animate, stagger } from 'animejs';
 
 import {
   Code,
@@ -192,9 +196,10 @@ export default function LandingPage() {
       )}
 
       {/* ================= 1. HERO SECTION ================= */}
+      <HeroAnime>
       <section id="hero" className="w-full max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 flex flex-col items-center text-center relative z-10 scroll-mt-24">
         {/* Interactive Typewriter Badge */}
-        <div data-aos="fade-down" className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border mb-6 backdrop-blur-md shadow-sm font-mono text-xs font-semibold text-orange-500 bg-orange-500/10 border-orange-500/20">
+        <div data-anime="badge" className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border mb-6 backdrop-blur-md shadow-sm font-mono text-xs font-semibold text-orange-500 bg-orange-500/10 border-orange-500/20">
           <Sparkles className="w-4 h-4 text-orange-500 animate-pulse" />
           <span className="text-slate-400 font-sans"></span>
           <Typewriter
@@ -220,15 +225,14 @@ export default function LandingPage() {
           />
         </div>
 
-        <h1 data-aos="fade-down" data-aos-duration="1000" className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] max-w-4xl">
+        <h1 data-anime="title" className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] max-w-4xl">
           Where Code Meets <span className="italic font-normal font-serif">Reality</span>:
           <br className="hidden sm:block" />
           <span className="text-[#FF5722]">Bridging Software &amp; IoT</span>
         </h1>
 
         <p
-          data-aos="fade-up"
-          data-aos-delay="150"
+          data-anime="sub"
           className={`mt-4 sm:mt-6 text-sm sm:text-base max-w-2xl leading-relaxed font-normal ${isLight ? 'text-slate-600' : 'text-slate-400'
             }`}
         >
@@ -243,9 +247,14 @@ export default function LandingPage() {
           untuk solusi cerdas masa depan.
         </p>
 
-        <div data-aos="fade-up" data-aos-delay="300" className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4 sm:px-0">
           <a
+            data-anime="cta"
             href="#project-kami"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('project-kami')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#FF5722] hover:bg-[#F4511E] text-white font-semibold text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-orange-500/25 transition-all duration-200 transform hover:-translate-y-0.5"
           >
             <svg className="w-4 h-4 fill-current rotate-45 -mt-0.5" viewBox="0 0 24 24">
@@ -254,7 +263,12 @@ export default function LandingPage() {
             Explore Projects
           </a>
           <a
+            data-anime="cta"
             href="#tentang-kami"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('tentang-kami')?.scrollIntoView({ behavior: 'smooth' });
+            }}
             className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 border text-sm font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 ${isLight
                 ? 'bg-white border-slate-300 text-slate-700 hover:bg-slate-100'
                 : 'bg-[#0D1526]/80 border-slate-800 text-slate-300 hover:bg-[#18233a]'
@@ -266,8 +280,7 @@ export default function LandingPage() {
 
         {/* Feature Cards Banner */}
         <div
-          data-aos="zoom-in-up"
-          data-aos-delay="450"
+          data-anime="card"
           className={`mt-10 sm:mt-14 w-full backdrop-blur-xl border rounded-2xl md:rounded-3xl p-5 sm:p-8 text-left transition-all shadow-2xl relative ${isLight
               ? 'bg-white/90 border-slate-200/90 shadow-sky-500/10'
               : 'bg-[#0D1526]/80 border-slate-800/80 shadow-black/40'
@@ -285,7 +298,7 @@ export default function LandingPage() {
                 // Proyek Kami
               </span>
               <h3 className={`text-lg sm:text-xl font-bold mb-1 sm:mb-2 ${isLight ? 'text-slate-900' : 'text-white'}`}>
-                50+ Proyek
+                <Counter end={50} suffix="+" /> Proyek
               </h3>
               <p className={`text-xs leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
                 Kami aktif mengirimkan telemetri secara real-time melalui protokol MQTT.
@@ -318,11 +331,12 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+      </HeroAnime>
 
       {/* ================= 2. TENTANG KAMI + ALUR KERJA ================= */}
       <section id="tentang-kami" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 w-full max-w-6xl mx-auto relative z-10 scroll-mt-24 space-y-12 sm:space-y-16">
         {/* Header & Vision/Mission */}
-        <div data-aos="fade-up" className="text-center space-y-4 sm:space-y-6">
+        <SectionTitle className="text-center space-y-4 sm:space-y-6">
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
             Tentang <span className="text-[#FF5722]">Kami</span>
           </h2>
@@ -333,6 +347,7 @@ export default function LandingPage() {
             <span className="text-[#FF5722] font-medium"> Rekayasa Perangkat Lunak (RPL)</span> dan
             <span className="text-[#FF5722] font-medium"> Infrastruktur Antares IoT</span> untuk menghadirkan platform modern yang responsif.
           </p>
+        </SectionTitle>
 
           {/* Terminal Style Visi & Misi Card */}
           <div
@@ -366,18 +381,17 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-        </div>
 
         {/* Alur Kerja Pembuatan Website — Vertical Timeline with Expandable Cards */}
         <div className="space-y-8 sm:space-y-10">
-          <div data-aos="fade-up" className="text-center space-y-2 sm:space-y-3">
+          <SectionTitle className="text-center space-y-2 sm:space-y-3">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
               Alur Kerja Pembuatan Website
             </h3>
             <p className={`text-xs sm:text-sm md:text-base max-w-xl mx-auto ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
               Tahapan sistematis dari ideasi awal hingga pembuatan komponen dan integrasi data real-time. (Arahkan kursor atau klik kartu untuk melihat detail)
             </p>
-          </div>
+          </SectionTitle>
 
           <div className="relative max-w-3xl mx-auto py-2">
             {/* Center Connecting Vertical Line */}
@@ -464,14 +478,14 @@ export default function LandingPage() {
       <section id="rpl" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 w-full max-w-6xl mx-auto relative z-10 scroll-mt-24">
         <div className="space-y-10 sm:space-y-12">
           {/* Header */}
-          <div data-aos="fade-up" className="text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto">
+          <SectionTitle className="text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto">
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
               Rekayasa Perangkat Lunak <span className="text-[#FF5722]">(RPL)</span>
             </h2>
             <p className={`text-xs sm:text-sm md:text-base leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
               Mengembangkan standar arsitektur perangkat lunak yang bersih, cepat, teruji, dan scalable untuk kebutuhan sistem informasi modern serta jaringan Internet of Things.
             </p>
-          </div>
+          </SectionTitle>
 
           {/* Core Competencies Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -530,14 +544,14 @@ export default function LandingPage() {
       {/* ================= 4. ANTARES IOT ECOSYSTEM SECTION ================= */}
       <section id="antares" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 w-full max-w-6xl mx-auto relative z-10 scroll-mt-24 space-y-12 sm:space-y-16">
         {/* Header */}
-        <div data-aos="fade-up" className="text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto">
+        <SectionTitle className="text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             Antares <span className="text-[#FF5722]">IoT Ecosystem</span> &amp; <span className={isLight ? 'text-[#0284C7]' : 'text-[#00D8F6]'}>RPL</span>
           </h2>
           <p className={`text-xs sm:text-sm md:text-base leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
             Platform IoT standar internasional OneM2M buatan Telkom Indonesia yang terintegrasi penuh dengan Rekayasa Perangkat Lunak untuk mengelola sensor, telemetri real-time, dan kontrol jarak jauh.
           </p>
-        </div>
+        </SectionTitle>
 
         {/* Integrated Modules Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
@@ -656,14 +670,14 @@ export default function LandingPage() {
 
       {/* ================= 5. KEUNGGULAN SECTION ================= */}
       <section id="keunggulan" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 w-full max-w-6xl mx-auto relative z-10 scroll-mt-24 space-y-8">
-        <div data-aos="fade-up" className="text-center space-y-2 sm:space-y-3">
+        <SectionTitle className="text-center space-y-2 sm:space-y-3">
           <h2 className={`text-2xl sm:text-3xl md:text-4xl font-extrabold ${isLight ? 'text-slate-900' : 'text-white'}`}>
             Keunggulan Antares IoT Platform
           </h2>
           <p className={`text-xs sm:text-sm max-w-xl mx-auto ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
             Fasilitas infrastruktur kelas industri untuk skalabilitas perangkat IoT tinggi.
           </p>
-        </div>
+        </SectionTitle>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <div data-aos="zoom-in" data-aos-delay="100" className={`p-5 sm:p-6 border rounded-2xl transition-all hover:scale-[1.02] ${isLight ? 'bg-white border-slate-200 shadow-sm' : 'bg-[#0D1526]/80 border-slate-800/80 shadow-lg'
@@ -736,8 +750,16 @@ export default function LandingPage() {
               return (
                 <button
                   key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold transition-all duration-300 flex items-center gap-1.5 transform hover:-translate-y-0.5 ${isActive
+                  onClick={(e) => {
+                    setSelectedCategory(cat);
+                    // Anime.js button press animation
+                    animate(e.currentTarget, {
+                      scale: [1, 0.88, 1.06, 1],
+                      duration: 380,
+                      ease: 'outBack',
+                    });
+                  }}
+                  className={`anime-ripple px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold transition-all duration-300 flex items-center gap-1.5 ${isActive
                       ? 'bg-[#FF5722] text-white shadow-lg shadow-orange-500/40 font-bold scale-105'
                       : isLight
                         ? 'bg-white text-slate-700 hover:bg-slate-100 hover:text-orange-600 border border-slate-200 shadow-sm'
@@ -871,14 +893,14 @@ export default function LandingPage() {
       {/* ================= 7. AI SECTION ================= */}
       <section id="ai-terminal" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 w-full max-w-6xl mx-auto relative z-10 flex flex-col items-center scroll-mt-24">
         {/* Header Section */}
-        <div data-aos="fade-up" className="text-center mb-8 sm:mb-10">
+        <SectionTitle className="text-center mb-8 sm:mb-10">
           <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide mb-2 ${isLight ? 'text-slate-900' : 'text-white'}`}>
             A.I - <span className="text-[#FF5722]">AR1</span>
           </h2>
           <p className={`text-xs sm:text-sm md:text-base ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
             Tanyakan apa saja pada AI - AR1, AI yang dibuat oleh Kelas 12 RPL 1
           </p>
-        </div>
+        </SectionTitle>
 
         {/* Main Grid Container */}
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -1058,14 +1080,14 @@ export default function LandingPage() {
 
       {/* ================= 8. TIM PENGGARAP SECTION ================= */}
       <section id="tim-penggarap" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 w-full max-w-6xl mx-auto relative z-10 scroll-mt-24 space-y-10 sm:space-y-12">
-        <div data-aos="fade-up" className="text-center space-y-2 sm:space-y-3">
+        <SectionTitle className="text-center space-y-2 sm:space-y-3">
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Tim Penggarap Website
           </h2>
           <p className={`text-xs sm:text-sm md:text-base max-w-xl mx-auto ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
             Para pengembang &amp; desainer di balik perancangan dan pembangunan platform website R1OT ini.
           </p>
-        </div>
+        </SectionTitle>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {teamData.map((member, index) => (

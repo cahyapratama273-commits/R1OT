@@ -84,3 +84,65 @@ body {
     animation-duration: 30s;
   }
 }
+
+/* =========================================
+   Anime.js — Hero initial hidden state
+   (JS sets opacity/transform, but we need
+   visibility:visible to avoid FOUC flash)
+   ========================================= */
+[data-anime] {
+  will-change: opacity, transform;
+}
+
+/* =========================================
+   Anime.js — Filter button ripple
+   ========================================= */
+.anime-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.anime-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at center, rgba(255, 87, 34, 0.35) 0%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transition: none;
+}
+
+/* =========================================
+   Anime.js — Nav link animated underline
+   ========================================= */
+.anime-nav-link {
+  position: relative;
+}
+
+.anime-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #FF5722;
+  border-radius: 9999px;
+  transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anime-nav-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   Anime.js — Counter number
+   ========================================= */
+.anime-counter {
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  min-width: 2ch;
+}
+

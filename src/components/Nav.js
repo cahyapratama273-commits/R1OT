@@ -1,17 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/context/ThemeContext";
 import { Sun, Moon } from "lucide-react";
 import Typewriter from "@/components/Typewriter";
+import { animate, createTimeline, stagger } from "animejs";
 
 export default function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
+  const brandRef = useRef(null);
+  const navRef = useRef(null);
+  const hasAnimated = useRef(false);
 
   const isLight = theme === "light";
 
@@ -27,6 +31,59 @@ export default function Nav() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Anime.js entrance animation — fires once on mount
+  useEffect(() => {
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced || hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    try {
+      const tl = createTimeline({ defaults: { ease: "outExpo" } });
+
+      if (brandRef.current) {
+        brandRef.current.style.opacity = "0";
+        tl.add(brandRef.current, {
+          opacity: [0, 1],
+          translateX: [-24, 0],
+          duration: 700,
+        }, 100);
+      }
+
+      if (navRef.current) {
+        const links = navRef.current.querySelectorAll("a");
+        if (links.length) {
+          links.forEach(l => { l.style.opacity = "0"; });
+          tl.add(links, {
+            opacity: [0, 1],
+            translateY: [-10, 0],
+            duration: 500,
+            delay: stagger(60),
+          }, 300);
+        }
+      }
+    } catch (e) {
+      // Fallback: restore opacity if animation fails
+      if (brandRef.current) brandRef.current.style.opacity = "1";
+      if (navRef.current) {
+        navRef.current.querySelectorAll("a").forEach(l => { l.style.opacity = "1"; });
+      }
+    }
+  }, []);
+
+  const handleNavClick = (e, href) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      const targetId = href.replace(/.*\#/, "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   const navLinks = [
     { name: "Tentang Kami", href: "#tentang-kami" },
@@ -52,7 +109,7 @@ export default function Nav() {
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3 group shrink-0 w-44 sm:w-48">
+        <Link ref={brandRef} href="/" className="flex items-center gap-3 group shrink-0 w-44 sm:w-48">
           <div
             className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center overflow-hidden p-1 shrink-0 transition-all duration-300 ${
               isLight
@@ -82,12 +139,13 @@ export default function Nav() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-sm font-semibold">
+        <nav ref={navRef} className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-sm font-semibold">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`transition-colors hover:text-[#FF5722] ${
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`anime-nav-link transition-colors hover:text-[#FF5722] ${
                 isLight ? "text-slate-700 hover:text-orange-600" : "text-slate-300 hover:text-[#FF5722]"
               }`}
             >
@@ -153,7 +211,7 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className={`py-2 px-3 rounded-lg transition-colors hover:bg-orange-500/10 hover:text-orange-500 ${
                   isLight ? "text-slate-800" : "text-slate-200"
                 }`}
