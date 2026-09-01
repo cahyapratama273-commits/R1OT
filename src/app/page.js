@@ -40,7 +40,14 @@ const projectsData = rawProjectsData.map((p) => ({
   tags: p.tags || []
 }));
 
-const categories = ['Semua Proyek', 'Next.js', 'React', 'Tailwind', 'TypeScript', 'MDX'];
+const categories = [
+  'Semua Proyek',
+  ...new Set(
+    rawProjectsData
+      .flatMap((p) => p.tags || [])
+      .map((tag) => (tag.toLowerCase() === 'html' ? 'HTML' : tag))
+  )
+];
 
 const iconMap = {
   Layout: Layout,
@@ -196,8 +203,16 @@ export default function LandingPage() {
               "Fahri Nasrulloh ❤ Lord Tunat",
               "Febri x Vicineko 😍",
               "Solusi Cerdas Masa Depan",
-              "Ridwan 50/50 bahik jahat",
-              "Aditya Anugerahh ❤ Nanakusa Nazuna"
+              "Ridwan 50/50 bahik jahat 😈",
+              "Nao Tomori ❤️",
+              "Aditya Anugerahh ❤ Nanakusa Nazuna",
+              "Where Code Meets Reality 🚀",
+              "Antares OneM2M Terintegrasi",
+              "Telemetri Real-time via MQTT",
+              "Ramdhani Full Stack Wizard 💻",
+              "Cahya Ngoding React Sampe Pagi 🌙",
+              "Latensi <30ms, Gak Pake Lag ⚡",
+              "AI AR1 Online 🤖"
             ]}
             typingSpeed={60}
             deletingSpeed={30}
